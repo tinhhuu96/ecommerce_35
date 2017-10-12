@@ -17,3 +17,17 @@ checkbox:
 picture:
   maximun_size: 5
   accepted_file: "image/jpeg,image/gif,image/png"
+
+controllers:
+  products:
+    all: "all"
+    to: "to"
+    start: 0
+    last: 1
+  price:
+    All Products: "all"
+    Below 1 milion: "1to1000000"
+    From 1 - 3: "1to3000000"
+    From 3 - 6: "3to6000000"
+    From 6 - 10: "6to10000000"
+    Above 10 milions: "10000000to1000000000"

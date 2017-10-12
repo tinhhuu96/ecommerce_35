@@ -231,3 +231,7 @@ section .container {
     display: block;
   }
 }
+
+.custom_radio {
+  input, textarea, select, .uneditable-input{ width: auto}
+}

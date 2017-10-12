@@ -12,13 +12,13 @@
 
 ActiveRecord::Schema.define(version: 20171011015227) do
 
-  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.text "content"
     t.bigint "user_id"
     t.bigint "product_id"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20171011015227) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "order_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "order_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer "quantity"
     t.integer "current_price"
     t.bigint "product_id"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20171011015227) do
     t.index ["product_id"], name: "index_order_details_on_product_id"
   end
 
-  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.datetime "date"
     t.integer "status"
     t.string "phone"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20171011015227) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "parameters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "parameters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.text "screen"
     t.string "os"
     t.string "camera_front"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20171011015227) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string "name"
     t.integer "price"
     t.integer "quantity"
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 20171011015227) do
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 
-  create_table "ratings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "ratings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.text "content"
     t.integer "score"
     t.bigint "user_id"
@@ -84,14 +84,14 @@ ActiveRecord::Schema.define(version: 20171011015227) do
     t.index ["user_id"], name: "index_ratings_on_user_id"
   end
 
-  create_table "user_suggestions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "user_suggestions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string "product_name"
     t.text "reason"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string "name"
     t.string "email"
     t.text "address"
@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 20171011015227) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  create_table "viewed_product_by_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "viewed_product_by_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.bigint "user_id"
     t.bigint "product_id"
     t.datetime "created_at", null: false

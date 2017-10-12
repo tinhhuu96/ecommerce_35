@@ -68,9 +68,16 @@
             </div><!--/category-products-->
             <div class="price-range"><!--price-range-->
               <h2><%= t ".range" %></h2>
-              <div class="well text-center">
-                 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
-                 <b class="pull-left"><%= t ".left" %></b> <b class="pull-right"><%= t ".rght" %></b>
+              <div class="well custom_radio">
+                <%= form_tag(products_path, method: :get) do |f| %>
+                  <%= collection_radio_buttons :get, :price, Settings.controllers.price.map {|k,v| [v,k]}, :first, :last, { checked: Settings.controllers.products[:all] } do |b| %>
+                    <div class="form-check">
+                      <%= b.radio_button(class: "form-check-label") %>
+                      <%= b.label(class: "form-check-label") %>
+                    </div>
+                  <% end %>
+                  <%= submit_tag( t(".search"), class: "btn btn-primary") %>
+                <% end %>
               </div>
             </div><!--/price-range-->
           </div>

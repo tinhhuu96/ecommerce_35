@@ -6,4 +6,5 @@ class Product < ApplicationRecord
 
   scope :sort_by_name, ->{order :name}
   scope :search_by_name, ->(content){where(" name like ?", "%#{content}%")}
+  scope :search_by_price, ->(start,last){where(" price between ? and ?", start, last)}
 end
