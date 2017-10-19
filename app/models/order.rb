@@ -1,10 +1,13 @@
 class Order < ApplicationRecord
   belongs_to :user
-  belongs_to :order_status, optional: true
   has_many :order_details, dependent: :destroy
 
   before_create :set_order_status
   before_save :update_subtotal
+
+  enum status: {in_progress: 1, placed: 2, shipped: 3, cancelled: 4}
+
+  scope :sort_by_created, ->{order created_at: :DESC}
 
   def subtotal
     order_details.collect{|oi| oi.valid? ? (oi.quantity.to_i * oi.current_price.to_i) : 0}.sum
@@ -24,7 +27,7 @@ class Order < ApplicationRecord
   private
 
   def set_order_status
-    self.order_statuses_id = 1
+    self.status = "in_progress"
   end
 
   def update_subtotal

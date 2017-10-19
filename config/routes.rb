@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   resource :cart, only: [:show]
   resources :order_details, only: %i(create update destroy)
   resources :checkouts, only: %i(index create)
+  resources :my_orders, only: [:index]
+  resources :orders, only: %i(show update)
 end

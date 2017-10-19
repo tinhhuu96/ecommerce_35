@@ -3,6 +3,7 @@
     <%= link_to image_tag("logo.gif"), root_url, class: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to t("my_order"), my_orders_path %></li>
         <li class="cart-text"><%= render "layouts/cart_text" %></li>
         <li><%= link_to t("home"), root_path %></li>
         <% if logged_in? %>

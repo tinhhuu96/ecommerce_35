@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  belongs_to :category
   has_one :parameter, dependent: :destroy
   has_many :order_details
   has_many :ratings
@@ -10,8 +11,8 @@ class Product < ApplicationRecord
 
   validates :name, presence: true, length: {maximum: Settings.product.name.maximum_length}
   validates :price, presence: true
-  validates :quantity, presence: true
-
+  validates :quantity, presence: true,
+    numericality: {only_integer: true, greater_than_or_equal_to: Settings.product.than}
 
   default_scope{where(active: true)}
   scope :sort_by_name, ->{order :name}

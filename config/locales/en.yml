@@ -98,7 +98,16 @@ en:
   pls_login: "Please Login !"
   error_destroy_product: "This product has a LineItem"
   order_success: "Order Success"
+  order_success_pls_check_mail: "Order Success, Please Check Email !"
   order_erorr: "Order Errors"
+  not_found_order: "Not found order !"
+  not_found_order_details: "Not found order details !"
+  cancel_order: "Cancelled Order"
+  canel_order_error: "Cancel Order Errors"
+  my_order: "My Orders"
+  update_quantity_errors: "Update quantity product errors"
+  thanks_mailer: "Thanks for order for App Store"
+  in_progress: "in_progress"
   static_pages:
     home:
       sign_up_announcement: "Sign up now!"
@@ -212,4 +221,44 @@ en:
     index:
       create_order: "Create Order"
       shopper_information: "Shopper Information"
+  orders:
+    show:
+      number_order: "DETAIS NUMBER"
+      name: "PRODUCT NAME"
+      quantity: "QUANTITY"
+      price: "PRICE"
+      price_total: "TOTAL PRICE"
+      order_details: "Order Details"
+      cancel_order: "Cancel Order"
+      order_number: "Order number: "
+      order_status: "Order status: "
+  my_orders:
+    index:
+      order_number: "ORDER NUMBER"
+      date: "DATE"
+      address: "ADRESS"
+      total: "TOTAL"
+      status: "STATUS"
+      details: "DETAILS"
+      your_order: "Your Orders"
+    order_details:
+      view_order: "View order"
+  user_notifier_mailer:
+    send_order_email:
+      hi: "Hi, "
+      thanks: "! Thanks for ordered."
+      order_infor: "Order Informations"
+      order_number: "Order Number: "
+      product_name: "Product Name"
+      quantity: "Quantity"
+      current-price: "Current Price"
+      total-price: "Total Price"
+      subtotal: "Subtotal: "
+      user_infor: "Receiver's Information"
+      name: "Name"
+      email: "Email"
+      phone: "Phone"
+      address: "Address"
+      love: "Love"
+      app_store: "App Store"
 

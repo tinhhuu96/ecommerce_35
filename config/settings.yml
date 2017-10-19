@@ -12,6 +12,7 @@ product:
   name:
     maximum_length: 100
   limit: 6
+  than: 0
 
 paginate:
   user_perpage: 50
@@ -35,3 +36,9 @@ picture:
   maximun_size: 5
   accepted_file: "image/jpeg,image/gif,image/png"
 order_status_id: 1
+default:
+  order:
+    progress: 1
+    placed: 2
+    shipped: 3
+    cancelled: 4

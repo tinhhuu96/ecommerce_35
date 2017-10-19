@@ -22,8 +22,6 @@
             <%= f.label :phone %><span class="span-order"> * </span>
             <%= f.text_field :phone, class: "form-control",  :required => true %>
 
-            <%= f.hidden_field :order_statuses_id, value: 2%>
-
             <%= f.submit t(".create_order"), class: "btn btn-primary button-order" %>
           <% end %>
         </div>
