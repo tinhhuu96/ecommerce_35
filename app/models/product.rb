@@ -1,9 +1,9 @@
 class Product < ApplicationRecord
   belongs_to :category
   has_one :parameter, dependent: :destroy
-  has_many :order_details
-  has_many :ratings
-  has_many :comments
+  has_many :order_details, dependent: :destroy
+  has_many :ratings, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   mount_uploader :picture, PictureUploader
 

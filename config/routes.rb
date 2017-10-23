@@ -25,4 +25,5 @@ Rails.application.routes.draw do
   resources :my_orders, only: [:index]
   resources :orders, only: %i(show update)
   resources :imports, only: %i(index create)
+  resources :manager_orders
 end

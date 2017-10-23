@@ -57,3 +57,4 @@ error_destroy_product: "This product has a LineItem"
 product_row: 1
 product_start: 2
 error_import: "Import errors"
+per_page_order: 15

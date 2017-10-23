@@ -1,0 +1,31 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <h1><%= t ".order_details" %></h1>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th><%= t ".number_order" %></th>
+            <th><%= t ".name" %></th>
+            <th><%= t ".quantity" %></th>
+            <th><%= t ".price" %></th>
+            <th><%= t ".price_total" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: "order_item", collection: @order_items, as: :item %>
+        </tbody>
+      </table>
+      <h5><%= t ".order_number" %><%= @order.id %></h5>
+      <!-- <h5><%= t ".order_status" %><%= @order.status %></h5> -->
+      <h5><%= t ".order_status" %></h5>
+      <div class="col-sm-3">
+        <% @status = {in_progress: "in_progress", placed: "placed", shipped: "shipped", cancelled: "cancelled"}  %>
+        <%= form_tag(manager_order_path, method: :patch) do %>
+          <%= select_tag(:status, options_from_collection_for_select(@status, :first, :last, @order.status), class: "form-control") %>
+          <%= submit_tag "Change Status", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

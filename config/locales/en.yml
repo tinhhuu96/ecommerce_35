@@ -126,7 +126,9 @@ en:
   create: "Create"
   this_is_super_category: "This is a super category"
   super_cate: "Super Category"
-
+  orders_manager: "Orders Manager"
+  deleted_order: "Deleted Order"
+  delete_order_errors: "Delete Order Errors"
   static_pages:
     home:
       sign_up_announcement: "Sign up now!"
@@ -294,12 +296,55 @@ en:
       phone: "Phone"
       address: "Address"
       love: "Love"
-      app_store: "App Store"
+      app_store: "Apple Store"
+    send_mail_status:
+      hi: "Hi, "
+      order_infor: "Order Informations"
+      order_number: "Order Number: "
+      product_name: "Product Name"
+      quantity: "Quantity"
+      current-price: "Current Price"
+      total-price: "Total Price"
+      subtotal: "Subtotal: "
+      user_infor: "Receiver's Information"
+      name: "Name"
+      email: "Email"
+      phone: "Phone"
+      address: "Address"
+      love: "Love"
+      app_store: "Apple Store"
+      content: "Order Status for Your Order Changed ! "
+      status: "Order Status:"
+
   imports:
     index:
       import_products: "Import Product"
       import: "Import"
-
+  manager_orders:
+    index:
+      order_number: "ORDER NUMBER"
+      date: "DATE"
+      address: "ADRESS"
+      total: "TOTAL"
+      status: "STATUS"
+      details: "DETAILS"
+      manager_orders: "All Orders"
+      delete: "DELETE"
+      order_name: "NAME"
+      order_email: "EMAIL"
+    order:
+      view_order: "View order"
+      delete: "Delete"
+    show:
+      number_order: "DETAIS NUMBER"
+      name: "PRODUCT NAME"
+      quantity: "QUANTITY"
+      price: "PRICE"
+      price_total: "TOTAL PRICE"
+      order_details: "Manager Order Details"
+      order_number: "Order number: "
+      order_status: "Order status: "
+      delete_order: "Delete Order"
   categories:
     new:
       add_cate: "Add Category"
