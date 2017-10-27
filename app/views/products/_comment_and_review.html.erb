@@ -33,9 +33,17 @@
     </div>
 
     <div class="tab-pane fade" id="reviews" >
-      <div class="col-sm-12">
-
-      </div>
+      <% if bought_this_product_before? && !review_this_product_before? %>
+        <div class="col-sm-12">
+          <%= render "shared/review_form" %>
+        </div>
+      <% end %>
+      <% if @product.ratings.any? %>
+          <ol class="comments">
+            <%= render @ratings %>
+          </ol>
+          <%= will_paginate @ratings %>
+        <% end %>
     </div>
 
   </div>

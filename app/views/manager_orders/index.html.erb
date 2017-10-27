@@ -1,0 +1,27 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <h1><%= t ".manager_orders" %></h1>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr class="row_custom header">
+            <th class="cell_custom"><%= t ".order_number" %></th>
+            <th class="cell_custom"><%= t ".order_name" %></th>
+            <th class="cell_custom"><%= t ".order_email" %></th>
+            <th class="cell_custom"><%= t ".date" %></th>
+            <th class="cell_custom"><%= t ".address" %></th>
+            <th class="cell_custom"><%= t ".total" %></th>
+            <th class="cell_custom"><%= t ".status" %></th>
+            <th class="cell_custom"><%= t ".details" %></th>
+            <th class="cell_custom"><%= t ".delete" %></th>
+          </tr>
+        </thead>
+           <%= render partial: "order", collection: @orders, as: :order %>
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <%= will_paginate @orders %>
+</section>

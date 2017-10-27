@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
       flash[:success] = t ".comment_created"
       redirect_to @comment.product
     else
-      flash[:danger] = t "comment_not_created"
+      flash[:danger] = t ".comment_not_created"
       redirect_to request.referer || root_url
     end
   end

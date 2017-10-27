@@ -85,9 +85,10 @@ en:
   advertisement: "Advertisement"
   ago: "ago"
   delete: "delete"
-  confirm: "You sure?"
+  confirm_msg: "Are you sure?"
   post: "Post"
-  write_comment: "Write a comment"
+  write_comment: "Write a comment... (more than 10 characters)"
+  write_review: "Write a review... (more than 10 characters)"
   created: "Created"
   not_created: "was not created"
   not_deleted: "was not deleted"
@@ -95,8 +96,8 @@ en:
   can_not_delete_cart: "can not delete cart"
   can_not_add_cart: "can not to add cart"
   not_found_product: "Not found product"
+  not_found_hot_product: "Hot trend product can not be found!"
   pls_login: "Please Login !"
-  error_destroy_product: "This product has a LineItem"
   order_success: "Order Success"
   order_success_pls_check_mail: "Order Success, Please Check Email !"
   order_erorr: "Order Errors"
@@ -108,10 +109,32 @@ en:
   update_quantity_errors: "Update quantity product errors"
   thanks_mailer: "Thanks for order for App Store"
   in_progress: "in_progress"
+  product_average: "Average user rating"
+  cant_find_review: "Review can not be found"
+  import: "Import Products"
+  imported: "Imported"
+  import_errors: "Can not import! Unknown file"
+  product_average: "Average user rating"
+  user_form_name: "Name *"
+  user_form_phone: "Phone *"
+  user_form_email: "Email *"
+  user_form_address: "Address *"
+  user_form_password: "Password *"
+  user_form_password_confirmation: "Password Confirmation *"
+  cate_manager: "Categories Manager"
+  cant_find_category: "Category can not be found"
+  create: "Create"
+  this_is_super_category: "This is a super category"
+  super_cate: "Super Category"
+  orders_manager: "Orders Manager"
+  deleted_order: "Deleted Order"
+  delete_order_errors: "Delete Order Errors"
   static_pages:
     home:
       sign_up_announcement: "Sign up now!"
       welcome: "Welcome to Apple Store"
+      hot_trend: "Hottrend Products"
+      lastest_products: "Lastest products"
     products_manager:
       id: "ID"
       image: "Images"
@@ -122,6 +145,12 @@ en:
       cate: "Category"
       action: "Actions"
       add_product: "Add Products"
+    categories_manager:
+      id: "ID"
+      name: "Name"
+      parent_cate: "Parent Category"
+      action: "Actions"
+      add_cate: "Add Category"
 
   users:
     new:
@@ -145,7 +174,7 @@ en:
       phone: "Phone"
       action: "Action"
     destroy:
-      destroy_success: "Deleted!!"
+      destroy_success: "Delete process is completed"
       destroy_fail: "Delete process is not completed!"
   shared:
     error_messages:
@@ -186,6 +215,7 @@ en:
       add_to_cart: "Add to cart"
       quantity: "Quantity: "
       ago: "ago"
+      no_rating: "No rating"
     new:
       add_product: "Add Product"
     create:
@@ -202,8 +232,14 @@ en:
 
   comments:
     create:
-      comment_created: "Your comment was posted"
-      comment_not_created: "Something was wrong! Unalble to post comment"
+      comment_created: "Your comment has been posted"
+      comment_not_created: "Something was wrong! Unalble to post your reviews"
+
+  ratings:
+    create:
+      rating_created: "Your reviews has been posted"
+      rating_not_created: "Something was wrong! Unalble to post your reviews"
+
   carts:
     cart_row:
       submit: "Update Quantity"
@@ -260,5 +296,62 @@ en:
       phone: "Phone"
       address: "Address"
       love: "Love"
-      app_store: "App Store"
+      app_store: "Apple Store"
+    send_mail_status:
+      hi: "Hi, "
+      order_infor: "Order Informations"
+      order_number: "Order Number: "
+      product_name: "Product Name"
+      quantity: "Quantity"
+      current-price: "Current Price"
+      total-price: "Total Price"
+      subtotal: "Subtotal: "
+      user_infor: "Receiver's Information"
+      name: "Name"
+      email: "Email"
+      phone: "Phone"
+      address: "Address"
+      love: "Love"
+      app_store: "Apple Store"
+      content: "Order Status for Your Order Changed ! "
+      status: "Order Status:"
 
+  imports:
+    index:
+      import_products: "Import Product"
+      import: "Import"
+  manager_orders:
+    index:
+      order_number: "ORDER NUMBER"
+      date: "DATE"
+      address: "ADRESS"
+      total: "TOTAL"
+      status: "STATUS"
+      details: "DETAILS"
+      manager_orders: "All Orders"
+      delete: "DELETE"
+      order_name: "NAME"
+      order_email: "EMAIL"
+    order:
+      view_order: "View order"
+      delete: "Delete"
+    show:
+      number_order: "DETAIS NUMBER"
+      name: "PRODUCT NAME"
+      quantity: "QUANTITY"
+      price: "PRICE"
+      price_total: "TOTAL PRICE"
+      order_details: "Manager Order Details"
+      order_number: "Order number: "
+      order_status: "Order status: "
+      delete_order: "Delete Order"
+  categories:
+    new:
+      add_cate: "Add Category"
+      create: "Crate Category"
+    destroy:
+      destroy_success: "Category has been destroyed"
+      destroy_fail: "Delete process is not completed!"
+      destroy_fail_because_of_sub: "This Category has sub-category, can not be destroyed"
+    create:
+      add_success: "Category has been added"

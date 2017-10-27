@@ -28,6 +28,9 @@
                       <%= submit_tag t(".add_to_cart"), class: "btn btn-fefault cart" %>
                     <% end %>
                   <% end %>
+                  <div class="col-sm-12">
+                    <%= render "average_score" %>
+                  </div>
                 </span>
                 <p><b><%= t ".vailability" %></b> <%= display_availability_for @product %></p>
                 <br>

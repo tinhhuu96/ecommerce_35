@@ -1,0 +1,14 @@
+<li class="rating-<%= rating.id %>">
+  <%= link_to show_avatar_for(rating.user), rating.user, class: "user_avatar_comment" %>
+  <span class="user"><%= link_to rating.user.name, rating.user %></span>
+  <span class="score" id="colorstar">
+    <%= rating.score %> <span class="glyphicon .glyphicon-star-empty glyphicon-star"></span>
+  </span>
+  <span class="content"><%= rating.content %></span>
+  <span class="timestamp">
+    <%= time_ago_in_words(rating.created_at) %> <%= t "ago" %>.
+  </span>
+  <% if current_user? rating.user %>
+      <span><%= link_to t("delete"), rating, method: :delete, data: {confirm: t("confirm")} %></span>
+  <% end %>
+</li>

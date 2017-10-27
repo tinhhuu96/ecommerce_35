@@ -7,4 +7,9 @@ module CategoriesHelper
     @cate = Category.find_by(id: id)
     @cate.present? ? @cate.name : id
   end
+
+  def has_sub_cate? category
+    @sub_cate = Category.get_sub_category category.id
+    @sub_cate.present?
+  end
 end

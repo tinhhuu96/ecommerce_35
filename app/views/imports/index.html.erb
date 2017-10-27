@@ -1,0 +1,28 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <h1><%= t ".import_products" %></h1>
+      <div class="row col-md-offset-1">
+        <%= form_tag imports_path, multipart: true, class: "form-group" do %>
+          <%= file_field_tag :file, required: true %>
+          <%= submit_tag t(".import"), class: "btn btn-primary" %>
+        <% end %>
+        <table style="width:90%" class="table_custom">
+          <tr class="row_custom header">
+            <th class="cell_custom"><%= t ".id" %></th>
+            <th class="cell_custom"><%= t ".image" %></th>
+            <th class="cell_custom"><%= t ".name" %></th>
+            <th class="cell_custom"><%= t ".price" %></th>
+            <th class="cell_custom"><%= t ".quantity" %></th>
+            <th class="cell_custom"><%= t ".active" %></th>
+            <th class="cell_custom"><%= t ".cate" %></th>
+            <th class="cell_custom"><%= t ".action" %></th>
+          </tr>
+          <%= render partial: "products/product_in_manager", collection: @products, as: :product %>
+        </table>
+        <%= will_paginate @products %>
+      </div>
+    </div>
+  </div>
+</section>
+

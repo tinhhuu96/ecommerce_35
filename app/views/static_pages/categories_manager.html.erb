@@ -1,0 +1,19 @@
+<h1><%= t "cate_manager" %></h1>
+<div class="row col-md-offset-2">
+  <%= render partial: "categories/category_in_manager", collection: @super_categories, as: :category %>
+</div>
+<div class="row col-md-offset-2 add_btn">
+  <button type="button" class="btn btn-primary"><%= link_to t(".add_cate"), new_category_path %></button>
+</div>
+
+<div class="row col-md-offset-0">
+  <table style="width:100%" class="table_custom">
+    <tr class="row_custom header">
+      <th class="cell_custom"><%= t ".id" %></th>
+      <th class="cell_custom"><%= t ".name" %></th>
+      <th class="cell_custom"><%= t ".parent_cate" %></th>
+      <th class="cell_custom"><%= t ".actions" %></th>
+    </tr>
+    <%= render partial: "categories/category_in_table_manager", collection: @categories, as: :category %>
+  </table>
+</div>

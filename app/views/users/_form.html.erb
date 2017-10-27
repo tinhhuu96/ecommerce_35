@@ -11,22 +11,22 @@
     <%= f.check_box :admin %>
   <% end %><br>
 
-  <%= f.label :name %>
+  <%= f.label :name, t("user_form_name") %>
   <%= f.text_field :name, class: "form-control" %>
 
-  <%= f.label :email %>
+  <%= f.label :email, t("user_form_email") %>
   <%= f.email_field :email, class: "form-control" %>
 
-  <%= f.label :address %>
+  <%= f.label :address, t("user_form_address") %>
   <%= f.text_field :address, class: "form-control" %>
 
-  <%= f.label :phone %>
+  <%= f.label :phone, t("user_form_phone") %>
   <%= f.text_field :phone, class: "form-control" %>
 
-  <%= f.label :password %>
+  <%= f.label :password, t("user_form_password") %>
   <%= f.password_field :password, class: "form-control" %>
 
-  <%= f.label :password_confirmation %>
+  <%= f.label :password_confirmation, t("user_form_password_confirmation") %>
   <%= f.password_field :password_confirmation, class: "form-control" %>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>

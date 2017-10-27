@@ -13,6 +13,7 @@ product:
     maximum_length: 100
   limit: 6
   than: 0
+  lastest_product: 6
 
 paginate:
   user_perpage: 50
@@ -20,6 +21,14 @@ paginate:
 
 checkbox:
   true: "1"
+
+comment:
+  max_length: 200
+  min_length: 10
+
+rating:
+  max_length: 200
+  min_length: 10
 
 controllers:
   products:
@@ -43,3 +52,9 @@ default:
     shipped: 3
     cancelled: 4
 email: "tinhhuu96@gmail.com"
+unknown_file: "Unknown file"
+error_destroy_product: "This product has a LineItem"
+product_row: 1
+product_start: 2
+error_import: "Import errors"
+per_page_order: 15
