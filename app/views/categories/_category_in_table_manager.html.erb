@@ -1,0 +1,11 @@
+<tr class="row_custom">
+  <td class="cell_custom"><%= link_to category.id, category %></td>
+  <td class="cell_custom"><%= link_to category.name, category %></td>
+  <td class="cell_custom"><%= display_cate_name_by(category.parent_id) %></td>
+  <td class="cell_custom">
+    <% if current_user.admin? %>
+      <%= link_to t("delete"), category, method: :delete, data: {confirm: t("confirm_msg")} %> |
+      <%= link_to t("update"), edit_category_path(category) %>
+    <% end %>
+  </td>
+</tr>

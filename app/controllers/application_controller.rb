@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
   end
 
   def load_all_category
-    @category = Category.all
+    @categories = Category.all
   end
 
   def current_cart

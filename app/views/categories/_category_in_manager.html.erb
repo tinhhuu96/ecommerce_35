@@ -1,0 +1,8 @@
+<%= "---->" * @count %>
+<%= link_to category.name, category %><br>
+<% @count +=1 %>
+<% if has_sub_cate? category %>
+  <%= render partial: "categories/category_in_manager",
+    collection: Category.get_sub_category(category.id), as: :category %>
+<% end %>
+<% @count -=1 if @count>0 %>

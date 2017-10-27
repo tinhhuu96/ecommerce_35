@@ -6,7 +6,15 @@
         </div>
         <div class="col-sm-9 padding-right">
           <div class="features_items"><!--features_items-->
-            <h2 class="title text-center"><%= t ".product" %></h2>
+            <h2 class="title text-center"><%= t ".hot_trend" %></h2>
+            <% if @hot_products.present? %>
+              <%= render @hot_products %>
+            <% else %>
+              <p style="text-align:center"><%= t "not_found_hot_product" %></p>
+            <% end %>
+          </div><!--features_items-->
+          <div class="features_items"><!--features_items-->
+            <h2 class="title text-center"><%= t ".lastest_products" %></h2>
             <% if @products.present? %>
               <%= render @products %>
             <% else %>

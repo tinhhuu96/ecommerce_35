@@ -1,0 +1,17 @@
+<div class="row lead evaluation score_vote">
+    <div id="colorstar" class="starrr ratable" ></div>
+    <span id="count" >0</span> star(s) - <span id="meaning"> </span>
+</div>
+<%= form_for @rating do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.hidden_field :product_id, value: params[:id] %>
+  <%= f.hidden_field :score, name: "rating_val", class: "rating_val", value: 0 %>
+  <div class="row col-sm-12">
+    <div class="field col-sm-10">
+      <%= f.text_area :content, placeholder: t("write_review"), class: "review_area" %>
+    </div>
+    <div class="field col-sm-2">
+      <%= f.submit t("post"), class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

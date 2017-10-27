@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-sm-3">
+    <div class="rating-block">
+      <span class="glyphicon .glyphicon-star-empty glyphicon-star" id="colorstar"></span>
+      <b><%= t "product_avegare" %></b>
+      <% if @avg_score > 0 %>
+        <div class="bold padding-bottom-7"> <%= @avg_score %> / 5</div>
+      <% else %>
+        <div class="bold padding-bottom-7"><%= t "no_rating" %></div>
+      <% end %>
+    </div>
+  </div>
+</div>

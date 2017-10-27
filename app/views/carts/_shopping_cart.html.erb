@@ -9,6 +9,8 @@
 <% end %>
 <% if @order_items.blank? %>
   <p class="text-center">
+    <%= image_tag "no-products-found.png" %>
+    <br>
     <%= t".cnt1" %> <%= link_to t(".go_back"), root_path %><%= t".cnt2" %>
   </p>
 <% else %>

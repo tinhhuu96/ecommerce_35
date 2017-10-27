@@ -2,6 +2,9 @@ class ProductsController < ApplicationController
   before_action :load_category, only: %i(index)
   before_action :load_product, except: %i(index create new)
   before_action :load_all_category, only: %i(new edit show)
+  before_action :load_rating, only: :show
+  before_action :load_comment, only: :show
+  before_action :check_if_has_line_item, only: :destroy
 
   def new
     @product = Product.new
@@ -38,9 +41,11 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @comments = @product.comments.sort_by_time.paginate(page: params[:page],
-      per_page: Settings.paginate.comment_perpage)
-    @comment = current_user.comments.build if logged_in?
+    if @product.ratings.present?
+      @avg_score = @product.ratings.average(:score).round(1)
+    else
+      @avg_score = 0
+    end
   end
 
   def index
@@ -52,6 +57,24 @@ class ProductsController < ApplicationController
   end
 
   private
+
+  def check_if_has_line_item
+    return if @product.order_details.empty?
+    flash[:danger] = t ".destroy_fail"
+    redirect_to products_manager_path
+  end
+
+  def load_rating
+    @rating = current_user.ratings.build if logged_in?
+    @ratings = @product.ratings.sort_by_time.paginate(page: params[:page],
+      per_page: Settings.paginate.comment_perpage)
+  end
+
+  def load_comment
+    @comments = @product.comments.sort_by_time.paginate(page: params[:page],
+      per_page: Settings.paginate.comment_perpage)
+    @comment = current_user.comments.build if logged_in?
+  end
 
   def load_product
     @product = Product.find_by id: params[:id]
