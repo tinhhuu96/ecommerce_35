@@ -1,0 +1,28 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <%= render "layouts/left_sidebar" %>
+      </div>
+      <div class="col-sm-9">
+        <h1><%= t ".your_order" %></h1>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th><%= t ".order_number" %></th>
+              <th><%= t ".date" %></th>
+              <th><%= t ".address" %></th>
+              <th><%= t ".total" %></th>
+              <th><%= t ".status" %></th>
+              <th><%= t "details" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: "order_details", collection: @orders, as: :order %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+

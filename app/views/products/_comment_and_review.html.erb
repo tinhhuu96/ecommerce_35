@@ -1,0 +1,42 @@
+<div class="category-tab shop-details-tab">
+  <div class="col-sm-12">
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a href="#comments" data-toggle="tab">
+          <%= t "all_comments" %>
+          (<%= show_number_comments_of(@product) %>)
+        </a>
+      </li>
+      <li><a href="#reviews" data-toggle="tab"><%= t "reviews" %></a></li>
+    </ul>
+  </div>
+  <div class="tab-content">
+
+    <div class="tab-pane fade active in" id="comments" >
+      <div class="col-sm-12">
+        <% if logged_in? %>
+          <div class="row">
+            <aside class="col-md-12">
+              <section class="comment_form">
+                <%= render "shared/comment_form" %>
+              </section>
+            </aside>
+          </div>
+        <% end %>
+        <% if @product.comments.any? %>
+          <ol class="comments">
+            <%= render @comments %>
+          </ol>
+          <%= will_paginate @comments %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="reviews" >
+      <div class="col-sm-12">
+
+      </div>
+    </div>
+
+  </div>
+</div>

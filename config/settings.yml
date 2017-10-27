@@ -1,0 +1,45 @@
+user:
+  name:
+    maximum_length: 50
+  email:
+    maximum_length: 255
+  password:
+    minimum_length: 6
+  address:
+    maximum_length: 255
+
+product:
+  name:
+    maximum_length: 100
+  limit: 6
+  than: 0
+
+paginate:
+  user_perpage: 50
+  comment_perpage: 5
+
+checkbox:
+  true: "1"
+
+controllers:
+  products:
+    all: "all"
+    to: "to"
+  price:
+      price_all: "all"
+      price_below_one: "1to1000000"
+      price_one_to_three: "1000000to3000000"
+      price_three_to_six: "3000000to6000000"
+      price_six_to_ten: "6000000to10000000"
+      price_above: "10000000to100000000"
+picture:
+  maximun_size: 5
+  accepted_file: "image/jpeg,image/gif,image/png"
+order_status_id: 1
+default:
+  order:
+    progress: 1
+    placed: 2
+    shipped: 3
+    cancelled: 4
+email: "tinhhuu96@gmail.com"

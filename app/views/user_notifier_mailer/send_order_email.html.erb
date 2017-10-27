@@ -1,0 +1,51 @@
+<h1><%= t ".hi" %><%= @user.name %><%= t ".thanks" %></h1>
+<h2><%= t ".order_infor" %></h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      <h3><%= t ".order_number" %><%= @cart.id %></h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <th><%= t ".product_name" %></th>
+            <th><%= t ".quantity" %></th>
+            <th><%= t ".current_price" %></th>
+            <th><%= t ".total_price" %></th>
+          </thead>
+          <tbody>
+            <% @cart.order_details.each do |item| %>
+              <tr>
+                <td><%= item.product.name %>
+                <td><%= item.quantity %>
+                <td><%= item.current_price %>
+                <td><%= item.total_price %>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <h4><%= t ".subtotal" %><%= @cart.subtotal %></h4>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <h3><%= t ".user_infor" %></h3>
+      <table class="table">
+          <thead>
+            <th><%= t ".name" %></th>
+            <th><%= t ".phone" %></th>
+            <th><%= t ".email" %></th>
+            <th><%= t ".address" %></th>
+          </thead>
+          <tbody>
+              <tr>
+                <td><%= @cart.name %>
+                <td><%= @cart.phone %>
+                <td><%= @cart.email %>
+                <td><%= @cart.address %>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+  <p><i><%= t ".love" %></i></p>
+  <p><b><%= t ".app_store" %></b></p>
+</div>

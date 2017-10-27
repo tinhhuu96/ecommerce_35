@@ -1,0 +1,26 @@
+<div class="col-sm-4">
+  <div class="product-image-wrapper">
+    <div class="single-products">
+        <div class="productinfo text-center">
+          <%= show_image_for product %>
+          <h2><%= product.price %></h2>
+          <p><%= product.name %></p>
+        </div>
+        <div class="product-overlay">
+          <div class="overlay-content">
+            <h2><%= product.price %></h2>
+            <p><%= product.name %></p>
+            <% if product.quantity != 0 %>
+              <%= link_to t(".add-cart"), order_details_path(order_detail: {product_id: product.id, quantity: 1}), remote: true, method: :post, class: "btn btn-default add-to-cart" %>
+            <% end %>
+          </div>
+        </div>
+    </div>
+    <div class="choose">
+      <ul class="nav nav-pills nav-justified">
+        <li></i><%= link_to (t".view-detail"), product %></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+

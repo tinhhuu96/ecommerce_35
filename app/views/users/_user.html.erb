@@ -1,0 +1,15 @@
+<tr class="row_custom">
+  <td class="cell_custom"><%= link_to user.name, user %></td>
+  <td class="cell_custom"><%= user.email %></td>
+  <td class="cell_custom"><%= user.address %></td>
+  <td class="cell_custom"><%= user.phone %></td>
+  <td class="cell_custom">
+    <% if current_user.admin? %>
+      <% if !current_user?(user) %>
+        <%= link_to t("delete"), user, method: :delete, data: {confirm: t("delete_confirm_msg")} %>
+      <% end %>
+      | <%= link_to t("update"), edit_user_path(user) %>
+    <% end %>
+  </td>
+  <td class="cell_custom"><%= user.admin? %></td>
+</tr>

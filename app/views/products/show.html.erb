@@ -1,0 +1,51 @@
+<section>
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+          <%= render "layouts/left_sidebar" %>
+        </div>
+
+        <div class="col-sm-9 padding-right">
+          <div class="features_items"><!--features_items-->
+            <h2 class="title text-center"><%= t ".detail" %></h2>
+          </div>
+          <div class="col-sm-5">
+              <div class="view-product">
+                <%= show_image_for @product %>
+              </div>
+            </div>
+            <div class="col-sm-7">
+              <div class="product-information"><!--/product-information-->
+                <img src="images/product-details/new.jpg" class="newarrival" alt="" />
+                <h2><%= @product.name %></h2>
+                <h2><%= number_with_delimiter(@product.price, delimiter: " ") %> $</h2>
+                <span>
+                  <label><%= t ".quantity" %><%= @product.quantity %></label>
+                  <%= form_tag "/order_details", remote: true do |f| %>
+                    <%= number_field_tag :quantity, 1, class: "form-control number_cart", min: 1 %>
+                    <%= hidden_field_tag :product_id, @product.id %>
+                    <% if @product.quantity != 0 %>
+                      <%= submit_tag t(".add_to_cart"), class: "btn btn-fefault cart" %>
+                    <% end %>
+                  <% end %>
+                </span>
+                <p><b><%= t ".vailability" %></b> <%= display_availability_for @product %></p>
+                <br>
+                <% if @product.parameter.present? %>
+                  <p><b><%= t ".screen" %></b> <%= @product.parameter.screen %></p>
+                  <p><b><%= t ".os" %></b> <%= @product.parameter.os %></p>
+                  <p><b><%= t ".font_cam" %></b> <%= @product.parameter.camera_front %></p>
+                  <p><b><%= t ".back_cam" %></b> <%= @product.parameter.camera_back %></p>
+                  <p><b><%= t ".ram" %></b> <%= @product.parameter.ram %></p>
+                  <p><b><%= t ".storage" %></b> <%= @product.parameter.memory_storage %></p>
+                  <p><b><%= t ".cpu" %></b> <%= @product.parameter.processor %></p>
+                <% end %>
+              </div><!--/product-information-->
+            </div>
+          <!--features_items-->
+        </div>
+        <%= render "comment_and_review" %>
+      </div>
+  </div>
+</section>
+

@@ -1,0 +1,42 @@
+<div class="left-sidebar">
+  <h2><%= t ".search" %></h2>
+  <form class="navbar-form" action="/products" method="get">
+      <div class="input-group">
+        <input type="text" class="form-control src" name="search" placeholder="Search">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+
+  <h2><%= t ".category" %></h2>
+  <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+            <%= link_to t("all_product"), categories_path %>
+        </h4>
+      </div>
+      <%= render partial: "categories/category", collection: @categories, as: :category %>
+    </div>
+  </div><!--/category-products-->
+  <div class="price-range"><!--price-range-->
+    <h2><%= t ".range" %></h2>
+    <div class="well">
+      <%= form_tag(products_path, method: :get) do %>
+        <%= collection_radio_buttons :reson, :price, Settings.controllers.price.map {|k,v| [v, t("#{k}")]},
+         :first, :last, { checked: Settings.controllers.products[:all] } do |b| %>
+          <div class="form-check">
+            <%= b.radio_button(class: "form-check-label") %>
+            <%= b.label(class: "form-check-label") %>
+          </div>
+        <% end %>
+        <%= submit_tag( t("search"), class: "btn btn-primary") %>
+      <% end %>
+    </div>
+  </div><!--/price-range-->
+  <h2><%= t ".advertisement" %></h2>
+  <%= image_tag "banner.gif", class: "left-banner img-responsive" %>
+</div>

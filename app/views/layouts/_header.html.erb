@@ -1,0 +1,41 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to image_tag("logo.gif"), root_url, class: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to t("my_order"), my_orders_path %></li>
+        <li class="cart-text"><%= render "layouts/cart_text" %></li>
+        <li><%= link_to t("home"), root_path %></li>
+        <% if logged_in? %>
+          <% if current_user.admin? %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <%= t "admin" %> <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to t("users_manager"), users_path %></li>
+                <li><%= link_to t("products_manager"), products_manager_path %></li>
+              </ul>
+            </li>
+          <% end %>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%= t "account" %> <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to t("profile"), current_user %></li>
+              <li><%= link_to t("settings"), edit_user_path(current_user) %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to t("log_out"), logout_path, method: :delete %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to t("log_in"), login_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

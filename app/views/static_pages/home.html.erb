@@ -1,2 +1,20 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<section>
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+          <%= render "layouts/left_sidebar" %>
+        </div>
+        <div class="col-sm-9 padding-right">
+          <div class="features_items"><!--features_items-->
+            <h2 class="title text-center"><%= t ".product" %></h2>
+            <% if @products.present? %>
+              <%= render @products %>
+            <% else %>
+              <p><%= t "not_found_product" %></p>
+            <% end %>
+          </div><!--features_items-->
+        </div>
+      </div>
+  </div>
+</section>
+

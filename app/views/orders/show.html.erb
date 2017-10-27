@@ -1,0 +1,33 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <%= render "layouts/left_sidebar" %>
+      </div>
+      <div class="col-sm-9">
+        <h1><%= t ".order_details" %></h1>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th><%= t ".number_order" %></th>
+              <th><%= t ".name" %></th>
+              <th><%= t ".quantity" %></th>
+              <th><%= t ".price" %></th>
+              <th><%= t ".price_total" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: "order", collection: @order_items, as: :item %>
+          </tbody>
+        </table>
+        <h5><%= t ".order_number" %><%= @order.id %></h5>
+        <h5><%= t ".order_status" %><%= @order.status %></h5>
+        <% if @order.status != "shipped" && @order.status != "cancelled"  %>
+          <%= link_to t(".cancel_order"), order_path, method: :put, class: "btn btn-primary" %>
+        <% else %>
+          <%= button_tag t(".cancel_order"), type: :button, class: "btn btn-primary", disabled: true %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

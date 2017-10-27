@@ -1,0 +1,31 @@
+<section>
+  <div class="shopper-informations">
+    <div class="row">
+      <div class="col-sm-3">
+        <%= render "layouts/left_sidebar" %>
+      </div>
+      <div class="col-sm-5 custom-order">
+        <div class="shopper-info">
+          <p><%= t".shopper_information" %></p>
+          <%= form_for @user, url: checkouts_path, method: :post do |f|%>
+            <%= render "shared/error_messages", object: f.object %>
+
+            <%= f.label :name %><span class="span-order"> * </span>
+            <%= f.text_field :name, class: "form-control", :required => true %>
+
+            <%= f.label :email %><span class="span-order"> * </span>
+            <%= f.email_field :email, class: "form-control", :required => true %>
+
+            <%= f.label :address %><span class="span-order"> * </span>
+            <%= f.text_field :address, class: "form-control", :required => true %>
+
+            <%= f.label :phone %><span class="span-order"> * </span>
+            <%= f.text_field :phone, class: "form-control",  :required => true %>
+
+            <%= f.submit t(".create_order"), class: "btn btn-primary button-order" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

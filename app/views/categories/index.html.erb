@@ -1,0 +1,14 @@
+<section>
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+          <%= render "layouts/left_sidebar" %>
+        </div>
+        <div class="col-sm-9 padding-right">
+          <div class="features_items">
+            <%= render partial: "category_detail", collection: @categories, as: :category %>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>

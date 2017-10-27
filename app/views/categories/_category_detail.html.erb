@@ -1,0 +1,5 @@
+<div class="category_items">
+  <h2 class="title text-center"><%= link_to category.name, category %></h2>
+  <% load_product_in_cate category %>
+  <%= render @products %>
+</div>

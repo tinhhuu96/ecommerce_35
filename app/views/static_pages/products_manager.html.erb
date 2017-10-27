@@ -1,0 +1,23 @@
+<% provide(:title, t("all_product")) %>
+<h1><%= t "all_product" %></h1>
+
+<div class="row col-md-offset-2 add_btn">
+  <button type="button" class="btn btn-primary"><%= link_to t("add_product"), new_product_path %></button>
+</div>
+
+<div class="row col-md-offset-1">
+  <table style="width:90%" class="table_custom">
+    <tr class="row_custom header">
+      <th class="cell_custom"><%= t ".id" %></th>
+      <th class="cell_custom"><%= t ".image" %></th>
+      <th class="cell_custom"><%= t ".name" %></th>
+      <th class="cell_custom"><%= t ".price" %></th>
+      <th class="cell_custom"><%= t ".quantity" %></th>
+      <th class="cell_custom"><%= t ".active" %></th>
+      <th class="cell_custom"><%= t ".cate" %></th>
+      <th class="cell_custom"><%= t ".action" %></th>
+    </tr>
+    <%= render partial: "products/product_in_manager", collection: @products, as: :product %>
+  </table>
+  <%= will_paginate @products %>
+</div>

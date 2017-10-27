@@ -1,0 +1,29 @@
+<%= form_for @product do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label t("category") %>
+  <%= f.collection_select :category_id, @category, :id, :name, {promt: t("choose_cate")} %>
+
+  <% if yield(:is_edit?) == "true" %>
+    <div class="edit_form_image">
+      <%= show_image_for @product %>
+    </div>
+  <% end %>
+
+  <%= f.label :picture %>
+  <%= f.file_field :picture, accept: Settings.picture.accepted_file %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :price %>
+  <%= f.number_field :price, class: "form-control" %>
+
+  <%= f.label :quantity %>
+  <%= f.number_field :quantity, class: "form-control" %>
+
+  <%= f.label :active %>
+  <%= f.check_box :active %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

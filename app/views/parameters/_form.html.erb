@@ -1,0 +1,28 @@
+<%= form_for [:product, @parameter] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.hidden_field :product_id, value: params[:product_id] %>
+
+  <%= f.label :screen %>
+  <%= f.text_field :screen, class: "form-control" %>
+
+  <%= f.label :os %>
+  <%= f.text_field :os, class: "form-control" %>
+
+  <%= f.label :processor %>
+  <%= f.text_field :processor, class: "form-control" %>
+
+  <%= f.label :camera_front %>
+  <%= f.text_field :camera_front, class: "form-control" %>
+
+  <%= f.label :camera_back %>
+  <%= f.text_field :camera_back, class: "form-control" %>
+
+  <%= f.label :ram %>
+  <%= f.text_field :ram, class: "form-control" %>
+
+  <%= f.label :memory_storage %>
+  <%= f.text_field :memory_storage, class: "form-control" %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>
