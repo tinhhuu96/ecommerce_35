@@ -1,0 +1,14 @@
+<% provide(:title, t("all_user")) %>
+<h1><%= t "all_product" %></h1>
+
+<div class="row col-md-offset-0">
+  <table style="width:100%" class="table_custom">
+    <tr class="row_custom header">
+      <% displayed_user_column_names.each do |item| %>
+        <th class="cell_custom"><%= item.capitalize %></th>
+      <% end %>
+    </tr>
+    <%= render partial: "user", collection: @users, as: :user%>
+  </table>
+  <%= will_paginate @users %>
+</div>
